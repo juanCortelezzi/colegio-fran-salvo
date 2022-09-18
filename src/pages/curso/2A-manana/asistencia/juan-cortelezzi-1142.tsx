@@ -31,7 +31,7 @@ const Row = ({
       <td>
         <p>{asistencia}%</p>
       </td>
-      <td className="btn-group justify-end">
+      <td className="btn-group items-center justify-end">
         <button className="btn btn-success">
           <CheckIcon className="h-8 w-8" />
         </button>

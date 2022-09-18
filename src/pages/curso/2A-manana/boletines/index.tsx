@@ -21,7 +21,7 @@ const Row = ({
   completo: boolean;
 }) => {
   return (
-    <tr className="not-prose">
+    <tr>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -46,7 +46,7 @@ const Row = ({
           <XMarkIcon className="h-8 w-8" />
         )}
       </td>
-      <th>
+      <th className="flex items-center justify-end">
         <Button />
       </th>
     </tr>
@@ -63,7 +63,7 @@ export default function BoletinesPage() {
       name="Boletines"
       className="prose-sm w-full sm:prose sm:max-w-none"
     >
-      <div className="w-full overflow-x-auto">
+      <div className="not-prose w-full overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>

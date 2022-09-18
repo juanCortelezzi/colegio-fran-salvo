@@ -18,7 +18,7 @@ const Row = ({
   promedio: number;
 }) => {
   return (
-    <tr className="not-prose">
+    <tr>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -36,7 +36,7 @@ const Row = ({
       <td>
         <p>{promedio}</p>
       </td>
-      <th>
+      <th className="flex items-center justify-end">
         <Button />
       </th>
     </tr>
@@ -54,7 +54,7 @@ export default function MateriaPage() {
       className="prose-sm mt-2 w-full sm:prose sm:max-w-none"
     >
       <h1>Alumnos de Ingenieria</h1>
-      <div className="w-full overflow-x-auto">
+      <div className="not-prose w-full overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>

@@ -3,11 +3,11 @@ import { Layout } from "@/components/layout";
 import Link from "next/link";
 
 interface Curso {
-  id: number,
-  year: number,
-  division: string,
-  students: number,
-  shift: "Morning" | "Evening"
+  id: number;
+  year: number;
+  division: string;
+  students: number;
+  shift: "Morning" | "Evening";
 }
 
 const cursos: Curso[] = [
@@ -42,7 +42,7 @@ function Card({ year, division, students, shift }: Curso) {
 const Home: NextPage = () => {
   return (
     <Layout
-      title="Colegio Francisco Salvo"
+      title="Colegio Francisco Savio"
       desc="Webcampus precios cuidados"
       className="prose-sm w-full sm:prose sm:max-w-none"
     >
