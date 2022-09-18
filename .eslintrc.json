@@ -9,7 +9,6 @@
     "prettier"
   ],
   "rules": {
-    "no-console": "warn",
     "no-duplicate-imports": "error",
     "default-case-last": "error",
     "eqeqeq": ["error", "always"],

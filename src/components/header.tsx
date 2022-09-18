@@ -1,30 +1,58 @@
-type HeaderProps = {
+import { Bars3Icon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+
+type PropsWithClassName = {
   className?: string;
 };
 
-export const Header = ({ className }: HeaderProps) => (
-  <header className={`navbar mx-0 mb-5 p-0 sm:mb-10 ${className && className}`}>
-    <div className="navbar-start">
-      <button className="btn btn-ghost ml-[-1rem] text-xl normal-case">
-        Template
-      </button>
+export const HeaderTitle = ({ className }: PropsWithClassName) => {
+  return (
+    <div className={className && className}>
+      <Link href="/">
+        <a className="btn btn-ghost text-3xl font-bold normal-case">
+          CFS
+        </a>
+      </Link>
     </div>
-    <div className="navbar-end mr-[-1rem]">
-      <button className="btn btn-ghost btn-square">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="inline-block h-5 w-5 stroke-current"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
+  );
+};
+
+export const HeaderMenuButton = ({
+  className,
+  htmlFor,
+}: PropsWithClassName & { htmlFor?: string }) => {
+  return (
+    <label
+      htmlFor={htmlFor}
+      className={`${
+        className && className
+      } btn btn-ghost btn-square drawer-button lg:hidden`}
+    >
+      <Bars3Icon className="h-5 w-5 md:h-6  md:w-6" />
+    </label>
+  );
+};
+
+export const HeaderContactUsButton = ({ className }: PropsWithClassName) => {
+  return (
+    <Link href="/contact" passHref>
+      <button
+        className={`btn btn-outline btn-secondary ${className && className}`}
+      >
+        Contact Us
       </button>
-    </div>
-  </header>
-);
+    </Link>
+  );
+};
+
+export const HeaderLoginButton = ({ className }: PropsWithClassName) => {
+  return (
+    <Link href="/login" passHref>
+      <button
+        className={`btn btn-outline btn-secondary ${className && className}`}
+      >
+        Log In
+      </button>
+    </Link>
+  );
+};

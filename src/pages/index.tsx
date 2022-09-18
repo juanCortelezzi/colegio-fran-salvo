@@ -1,46 +1,71 @@
 import type { NextPage } from "next";
 import { Layout } from "@/components/layout";
-import { ThemeChanger } from "@/components/themeChanger";
+import Link from "next/link";
+
+interface Curso {
+  id: number,
+  year: number,
+  division: string,
+  students: number,
+  shift: "Morning" | "Evening"
+}
+
+const cursos: Curso[] = [
+  { id: 0, year: 1, division: "a", students: 21, shift: "Morning" },
+  { id: 1, year: 2, division: "a", students: 22, shift: "Morning" },
+  { id: 2, year: 2, division: "b", students: 23, shift: "Evening" },
+  { id: 3, year: 3, division: "a", students: 24, shift: "Morning" },
+  { id: 4, year: 4, division: "a", students: 25, shift: "Morning" },
+];
+
+function Card({ year, division, students, shift }: Curso) {
+  return (
+    <div className="not-prose">
+      <Link href="/curso/2A-manana">
+        <a>
+          <div className="card w-full border border-primary shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">
+                {year}
+                {division}
+              </h2>
+              <p>Turno: {shift}</p>
+              <p>{students} students</p>
+            </div>
+          </div>
+        </a>
+      </Link>
+    </div>
+  );
+}
 
 const Home: NextPage = () => {
   return (
     <Layout
-      title="Frontend Template"
-      desc="Simple Frontend template, just Ctrl + c and Ctrl + v"
+      title="Colegio Francisco Salvo"
+      desc="Webcampus precios cuidados"
       className="prose-sm w-full sm:prose sm:max-w-none"
     >
-      <h1>Next + TS + Tailwind + DaisyUI</h1>
-      <h2>Theme changing</h2>
-      <ThemeChanger />
-      <h2>Decision making</h2>
-      <p>
-        I created this starter because from now on I&apos;m probably going to
-        use Tailwind + Daisyui for all my frontend projects. Tailwind makes
-        writing css less painful and Daisyui is a fully featured UI library
-        without the jargon and custom props that other UI libraries offer. In my
-        opinion this is the easiest and quickest way to get a frontend project
-        up and running.
-      </p>
-      <p>Warning, dummy text ahead...</p>
-      <p>
-        By default, Tailwind removes all of the default browser styling from
-        paragraphs, headings, lists and more. This ends up being really useful
-        for building application UIs because you spend less time undoing
-        user-agent styles, but when you really are just trying to style some
-        content that came from a rich-text editor in a CMS or a markdown file,
-        it can be surprising and unintuitive.
-      </p>
-      <h2>More Dummy text but in a header</h2>
-      <p>
-        What follows from here is just a bunch of absolute nonsense I’ve written
-        to dogfood the plugin itself. It includes every sensible typographic
-        element I could think of, like bold text, unordered lists, ordered
-        lists, code blocks, block quotes, and even italics.
-      </p>
-      <p>
-        I would have loved to write this text, unfortunately, it is a copy paste
-        form the Daisy ui docs
-      </p>
+      <input
+        type="text"
+        className="input input-bordered w-full"
+        placeholder="Search..."
+      />
+
+      <div className="my-6" />
+
+      <div className="grid grid-cols-1 content-evenly justify-center gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {cursos.map((c) => (
+          <Card
+            key={c.id}
+            id={c.id}
+            year={c.year}
+            division={c.division}
+            students={c.students}
+            shift={c.shift}
+          />
+        ))}
+      </div>
     </Layout>
   );
 };
