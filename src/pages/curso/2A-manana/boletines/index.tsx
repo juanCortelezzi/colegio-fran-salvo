@@ -76,7 +76,7 @@ export default function BoletinesPage() {
           <tbody>
             <Row
               src="/rust-logo.png"
-              name="Ramon Soarez"
+              name="Ramon Soares"
               promedio={8}
               completo={true}
             />
@@ -94,7 +94,7 @@ export default function BoletinesPage() {
             />
             <Row
               src="/rust-logo.png"
-              name="Ignacio Tsung"
+              name="Ignacio Tsai"
               promedio={9}
               completo={false}
             />

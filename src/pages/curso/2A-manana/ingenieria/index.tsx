@@ -64,14 +64,14 @@ export default function MateriaPage() {
             </tr>
           </thead>
           <tbody>
-            <Row src={"/rust-logo.png"} name={"Ramon Soarez"} promedio={8} />
+            <Row src={"/rust-logo.png"} name={"Ramon Soares"} promedio={8} />
             <Row
               src={"/rust-logo.png"}
               name={"Ornela Facciola"}
               promedio={6.8}
             />
             <Row src={"/rust-logo.png"} name={"Juan Cortelezzi"} promedio={3} />
-            <Row src={"/rust-logo.png"} name={"Ignacio Tsung"} promedio={9} />
+            <Row src={"/rust-logo.png"} name={"Ignacio Tsai"} promedio={9} />
             <Row src={"/rust-logo.png"} name={"Miguel Danotto"} promedio={10} />
             <Row src={"/rust-logo.png"} name={"Miguel Danotto"} promedio={10} />
             <Row src={"/rust-logo.png"} name={"Miguel Danotto"} promedio={10} />

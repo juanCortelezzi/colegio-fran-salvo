@@ -66,10 +66,10 @@ export default function BoletinesPage() {
             </tr>
           </thead>
           <tbody>
-            <Row src="/rust-logo.png" name="Ramon Soarez" asistencia={100} />
+            <Row src="/rust-logo.png" name="Ramon Soares" asistencia={100} />
             <Row src="/rust-logo.png" name="Ornela Facciola" asistencia={100} />
             <Row src="/rust-logo.png" name="Juan Cortelezzi" asistencia={100} />
-            <Row src="/rust-logo.png" name="Ignacio Tsung" asistencia={100} />
+            <Row src="/rust-logo.png" name="Ignacio Tsai" asistencia={100} />
             <Row
               src={"/rust-logo.png"}
               name="Miguel Danotto"
